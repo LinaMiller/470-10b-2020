@@ -25,6 +25,28 @@ from tkinter import *
 
 
 # --- Miller Lina Lvovna ---------------------
+def mll(ls_circle, k):
+    """
+     mll - 
+    """
+    face = ls_circle[k]
+    canvas.itemconfig(face, fill="#ffff77", outline="#ffaa77", width=2)
+    n = (k // 5)
+    m = (k % 5)
+    x = r + 40 + m * (2 * r + 80)
+    y = r + 100 + n * (2 * r + 60)
+    nose = canvas.create_polygon(x-5, y+5, x, y-5, x+5, y+5, fill="#ffaa77")
+    eye_right = canvas.create_oval(x-27, y-22, x-13, y-8, fill="blue", outline="blue")
+    eye_left = canvas.create_oval(x+13, y-22, x+27, y-8, fill="blue", outline="blue")
+    mouth = canvas.create_arc(x-20, y-5, x+20, y+35, start=190, extent=160,
+                              fill="#ffaa77", outline="red", width=5, style=ARC)
+    #h1 = canvas.create_arc(x+30, y-50, x+60, y-20, start=20, extent=350,
+    #                          style=ARC, outline="red", width=5)
+
+    b1 = canvas.create_polygon(x-35, y-35, x-50, y-20, x-60, y-25,
+                               x-35, y-35, x-20, y-50, x-40, y-55,
+                               fill="green")
+
 
 # --- ??? ---------------------    
 
@@ -66,6 +88,8 @@ for k in range(15):
     y = r + 100 + n * (2 * r + 60)
     canvas.create_oval(x-5, y-5, x+5, y+5, fill="blue")
 '''
+# --- Miller Lina Lvovna ---------------------    
+mll(list_circles, 0)
 
 # --- ??? ---------------------    
 
