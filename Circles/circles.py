@@ -16,7 +16,7 @@
 Запишите сюда название функции, автора и номер вашей окружности.
 
 0, mll, Миллер Лина Львовна
-1, 
+1, georgyteterin, Тетерин Георгий
 2,
 ...
 9, polly, Ефимова Полина
@@ -69,7 +69,23 @@ def polly(ls_circle, k):
     tongue = canvas.create_oval(x-9,y+27, x+9, y+35, fill="#f73110",outline="#f73110")
     palka = canvas.create_line(x,y+28,x,y+34,fill="black",width=1)
     
-# --- ??? ---------------------
+# --- Teterin Georgy ---------------------
+def georgyteterin(ls_circle, k):
+    """
+     mll - 
+    """
+    face = ls_circle[k]
+    canvas.itemconfig(face, fill="lightsteelblue1", outline="lightsteelblue3", width=3)
+    n = (k // 5)
+    m = (k % 5)
+    x = r + 40 + m * (2 * r + 80)
+    y = r + 100 + n * (2 * r + 60)
+    eye_right = canvas.create_oval(x-27, y-22,x-13 , y-8, fill="pink1",outline="#e7e784")
+    eye_left = canvas.create_oval(x+13, y-22, x+27, y-8, fill="pink1", outline="#e7e784")
+    pupil_right = canvas.create_oval(x-24, y-18, x-16, y-11, fill="black",outline="black")
+    pupil_left = canvas.create_oval(x+16, y-18, x+24, y-11, fill="black",outline="black")
+    mouth = canvas.create_line(x-25,y+18, x+25, y+25, fill="black",width=3)
+
 
 # --- ??? ---------------------
 
@@ -113,7 +129,8 @@ mll(list_circles, 0)
 # --- Efimova Polina ---------------------
 polly(list_circles, 9)
 
-# --- ??? ---------------------
+# --- Teterin Georgy ---------------------
+georgyteterin(list_circles, 1)
 
 # --- ??? ---------------------
 
