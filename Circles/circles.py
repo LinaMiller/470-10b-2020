@@ -16,9 +16,10 @@
 Запишите сюда название функции, автора и номер вашей окружности.
 
 0, mll, Миллер Лина Львовна
-1,
+1, 
 2,
-
+...
+9, polly, Ефимова Полина
 """
 
 from tkinter import *
@@ -48,8 +49,26 @@ def mll(ls_circle, k):
                                fill="green")
 
 
-# --- ??? ---------------------    
-
+# --- Efimova Polina ---------------------
+def polly(ls_circle, k):
+    """
+     mll - 
+    """
+    face = ls_circle[k]
+    canvas.itemconfig(face, fill="#e7e784", outline="#e7bc0b", width=5)
+    n = (k // 5)
+    m = (k % 5)
+    x = r + 40 + m * (2 * r + 80)
+    y = r + 100 + n * (2 * r + 60)
+    eye_right = canvas.create_oval(x-27, y-22,x-13 , y-8, fill="white",outline="#e7e784")
+    eye_right1 = canvas.create_oval(x-24, y-15, x-16, y-8, fill="black",outline="black")
+    eye_left = canvas.create_oval(x+13, y-22, x+27, y-8, fill="white", outline="#e7e784")
+    eye_left1 = canvas.create_oval(x+16, y-15, x+24, y-8, fill="black",outline="black")
+    rot = canvas.create_oval(x-25,y+10, x+25, y+30, fill="#f73110",outline="#f73110")
+    rrot = canvas.create_oval(x-25,y+5, x+25, y+25, fill="#e7e784",outline="#e7e784")
+    tongue = canvas.create_oval(x-9,y+27, x+9, y+35, fill="#f73110",outline="#f73110")
+    palka = canvas.create_line(x,y+28,x,y+34,fill="black",width=1)
+    
 # --- ??? ---------------------
 
 # --- ??? ---------------------
@@ -91,7 +110,8 @@ for k in range(15):
 # --- Miller Lina Lvovna ---------------------    
 mll(list_circles, 0)
 
-# --- ??? ---------------------    
+# --- Efimova Polina ---------------------
+polly(list_circles, 9)
 
 # --- ??? ---------------------
 
