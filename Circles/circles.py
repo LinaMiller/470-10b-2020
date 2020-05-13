@@ -1,6 +1,5 @@
 """
 Здравствуйте, 10б!
-
 Предлагаю вам принять участие в создании коллективного психологического
 портрета нашей группы. Для этого используем известный тест,
 связанный с дорисовыванием кружочков.
@@ -9,12 +8,10 @@
 0..14
 Ваша задача, выбрать себе кружок и написать функцию,
 которая дорисует что-то на вашем кружочке.
-
 """
 
 """
 Запишите сюда название функции, автора и номер вашей окружности.
-
 0, mll, Миллер Лина Львовна
 1, georgyteterin, Тетерин Георгий
 2,
@@ -55,7 +52,7 @@ def polly(ls_circle, k):
      mll - 
     """
     face = ls_circle[k]
-    canvas.itemconfig(face, fill="#e7e784", outline="#e7bc0b", width=5)
+    canvas.itemconfig(face, fill="#f7dfd6", outline="#efc3bd", width=5)
     n = (k // 5)
     m = (k % 5)
     x = r + 40 + m * (2 * r + 80)
@@ -65,7 +62,7 @@ def polly(ls_circle, k):
     eye_left = canvas.create_oval(x+13, y-22, x+27, y-8, fill="white", outline="#e7e784")
     eye_left1 = canvas.create_oval(x+16, y-15, x+24, y-8, fill="black",outline="black")
     rot = canvas.create_oval(x-25,y+10, x+25, y+30, fill="#f73110",outline="#f73110")
-    rrot = canvas.create_oval(x-25,y+5, x+25, y+25, fill="#e7e784",outline="#e7e784")
+    rrot = canvas.create_oval(x-25,y+5, x+25, y+25, fill="#f7dfd6",outline="#f7dfd6")
     tongue = canvas.create_oval(x-9,y+27, x+9, y+35, fill="#f73110",outline="#f73110")
     palka = canvas.create_line(x,y+28,x,y+34,fill="black",width=1)
     
@@ -137,4 +134,5 @@ georgyteterin(list_circles, 1)
 
 
 canvas.mainloop()
+
 
