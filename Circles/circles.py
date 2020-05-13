@@ -15,6 +15,7 @@
 0, mll, Миллер Лина Львовна
 1, georgyteterin, Тетерин Георгий
 2,nik, Пономарев Никита
+3,eva, Пономарева Ева
 ...
 9, polly, Ефимова Полина
 """
@@ -103,8 +104,25 @@ def nik (ls_circle, k):
     glass_right = canvas.create_oval(x-30, y-25, x-10, y-5, outline="black")
     glass = canvas.create_line(400,135,500,135, fill="black")
 
-
-
+# --- Ponomareva Eva ---------------------
+def eva(ls_circle, k):
+    """
+     mll - 
+    """
+    face = ls_circle[k]
+    canvas.itemconfig(face, fill="indian red", outline="navajo white", width=4)
+    n = (k // 5)
+    m = (k % 5)
+    x = r + 40 + m * (2 * r + 80)
+    y = r + 100 + n * (2 * r + 60)
+    eye_right = canvas.create_oval(x-27, y-22, x-13, y-8, fill="lavender", outline="white",width=2)
+    eye_left = canvas.create_oval(x+13, y-22, x+27, y-8, fill="lavender", outline="white",width=2)
+    eye_right1 = canvas.create_oval(x-24, y-18, x-16, y-11, fill="black",outline="black",width=0.5)
+    eye_left1 = canvas.create_oval(x+16, y-18, x+24, y-11, fill="black",outline="black",width=0.5)
+    mouth = canvas.create_arc(x-20, y-5, x+20, y+15, start=190, extent=160,
+                              fill="red", outline="lemon chiffon", width=4, style=ARC)
+    mouth1 = canvas.create_arc(x-22, y-5, x+22, y+35, start=160, extent=220,
+                              fill="red", outline="lemon chiffon", width=4, style=ARC)
 
 # --- main ---------------------    
 
@@ -148,6 +166,8 @@ georgyteterin(list_circles, 1)
 # --- Ponomarev Nikita ---------------------
 nik(list_circles, 2)
 
+# --- Ponomareva Eva ---------------------
+eva(list_circles, 3)
 
 canvas.mainloop()
 
