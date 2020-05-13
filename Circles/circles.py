@@ -14,7 +14,7 @@
 Запишите сюда название функции, автора и номер вашей окружности.
 0, mll, Миллер Лина Львовна
 1, georgyteterin, Тетерин Георгий
-2,
+2,nik, Пономарев Никита
 ...
 9, polly, Ефимова Полина
 """
@@ -84,8 +84,24 @@ def georgyteterin(ls_circle, k):
     mouth = canvas.create_line(x-25,y+18, x+25, y+25, fill="black",width=3)
 
 
-# --- ??? ---------------------
-
+# --- Ponomarev Nikita ---------------------
+def nik (ls_circle, k):
+    """
+     mll - 
+    """
+    face = ls_circle[k]
+    canvas.itemconfig(face, fill="yellow", outline="black", width=2)
+    n = (k // 5)
+    m = (k % 5)
+    x = r + 40 + m * (2 * r + 80)
+    y = r + 100 + n * (2 * r + 60)
+    eye_right = canvas.create_oval(x-27, y-22, x-13, y-8, fill="blue", outline="blue")
+    eye_left = canvas.create_oval(x+13, y-22, x+27, y-8, fill="blue", outline="blue")
+    mouth = canvas.create_arc(x-40, y-5, x+40, y+25, start=190, extent=160,
+                              fill="black", outline="black", width=5, style=ARC)
+    glass_left =canvas.create_oval(x+10, y-25, x+ 30, y-5,outline="black")
+    glass_right = canvas.create_oval(x-30, y-25, x-10, y-5, outline="black")
+    glass = canvas.create_line(400,135,500,135, fill="black")
 
 
 
@@ -129,8 +145,8 @@ polly(list_circles, 9)
 # --- Teterin Georgy ---------------------
 georgyteterin(list_circles, 1)
 
-# --- ??? ---------------------
-
+# --- Ponomarev Nikita ---------------------
+nik(list_circles, 2)
 
 
 canvas.mainloop()
