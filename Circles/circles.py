@@ -16,6 +16,7 @@
 1, georgyteterin, Тетерин Георгий
 2,nik, Пономарев Никита
 3,eva, Пономарева Ева
+7, SenyaHaha, Лукин Арсений
 ...
 9, polly, Ефимова Полина
 """
@@ -124,7 +125,24 @@ def eva(ls_circle, k):
     mouth1 = canvas.create_arc(x-22, y-5, x+22, y+35, start=160, extent=220,
                               fill="red", outline="lemon chiffon", width=4, style=ARC)
 
-# --- main ---------------------    
+# --- Lukin Arseny ---------------------
+
+def SenyaHaha(ls_circle, k):
+    """
+     mll - 
+    """
+    face = ls_circle[k]
+    canvas.itemconfig(face, fill="yellow2", outline="gold", width=5)
+    n = (k // 5)
+    m = (k % 5)
+    x = r + 40 + m * (2 * r + 80)
+    y = r + 100 + n * (2 * r + 60)
+    eye_right = canvas.create_oval(x-27, y-22,x-13 , y-6, fill="lightcyan2",outline="#e7e784")
+    eye_left = canvas.create_oval(x+13, y-22, x+27, y-6, fill="lightcyan2", outline="#e7e784")
+    in_eye_right = canvas.create_oval(x-24, y-18, x-16, y-8, fill="black",outline="black")
+    in_eye_left = canvas.create_oval(x+16, y-18, x+24, y-8, fill="black",outline="black")
+    smile = canvas.create_oval(x-25,y+15, x+25, y+35, fill="indianred2",outline="#f73110")
+    lip = canvas.create_oval(x-25,y+5, x+25, y+25, fill="yellow2",outline="#f7dfd6")
 
 root = Tk()
 root.geometry("900x600+0+0")
@@ -168,6 +186,10 @@ nik(list_circles, 2)
 
 # --- Ponomareva Eva ---------------------
 eva(list_circles, 3)
+
+
+# --- Lukin Arseny ---------------------
+SenyaHaha(list_circles, 7)
 
 canvas.mainloop()
 
