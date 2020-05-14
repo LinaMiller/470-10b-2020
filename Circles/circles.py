@@ -17,6 +17,7 @@
 2,nik, Пономарев Никита
 3,eva, Пономарева Ева
 7, SenyaHaha, Лукин Арсений
+4, dima, Леденцов Дмитрий
 ...
 9, polly, Ефимова Полина
 """
@@ -47,6 +48,23 @@ def mll(ls_circle, k):
                                x-35, y-35, x-20, y-50, x-40, y-55,
                                fill="green")
 
+# --- Dmitriy Ledentsov  ---------------------
+def dima(ls_circle, k):
+    """
+     mll - 
+    """
+    face = ls_circle[k]
+    canvas.itemconfig(face, fill="grey", outline="black", width=3)
+    n = (k // 5)
+    m = (k % 5)
+    x = r + 40 + m * (2 * r + 80)
+    y = r + 100 + n * (2 * r + 60)
+    eye_right = canvas.create_oval(x-30, y-18,x-10 , y-8, fill="pink1",outline="#e7e784")
+    eye_left = canvas.create_oval(x+10, y-18, x+30, y-8, fill="pink1", outline="#e7e784")
+    
+    pupil_right = canvas.create_oval(x-24, y-18, x-16, y-11, fill="black",outline="black")
+    pupil_left = canvas.create_oval(x+16, y-18, x+24, y-11, fill="black",outline="black")
+    mouth = canvas.create_line(x-25,y+18, x+25, y+18, fill="black",width=3)
 
 # --- Efimova Polina ---------------------
 def polly(ls_circle, k):
@@ -174,6 +192,9 @@ for k in range(15):
 '''
 # --- Miller Lina Lvovna ---------------------    
 mll(list_circles, 0)
+
+# --- Dmytry Ledentsov ---------------------
+dima(list_circles, 4)
 
 # --- Efimova Polina ---------------------
 polly(list_circles, 9)
