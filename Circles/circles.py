@@ -14,11 +14,12 @@
 Запишите сюда название функции, автора и номер вашей окружности.
 0, mll, Миллер Лина Львовна
 1, georgyteterin, Тетерин Георгий
-2,nik, Пономарев Никита
-3,eva, Пономарева Ева
+2, nik, Пономарев Никита
+3, eva, Пономарева Ева
+4, dima, DimaLedentsov
 6, Lera, Topchiy Lera
 7, SenyaHaha, Лукин Арсений
-5, dima, DimaLedentsov
+
 
 ...
 9, polly, Ефимова Полина
@@ -29,7 +30,10 @@ from tkinter import *
 # --- Miller Lina Lvovna ---------------------
 def mll(ls_circle, k):
     """
-     mll - 
+     Функция рисует смайлик в кружке.
+     Параметры функции:
+     ls_circle - список координат центров окружностей
+     k - номер кружка, который я собираюсь раскрашивать.
     """
     face = ls_circle[k]
     canvas.itemconfig(face, fill="#ffff77", outline="#ffaa77", width=2)
@@ -186,7 +190,7 @@ def Lera(ls_circle, k):
 
 
 root = Tk()
-root.geometry("900x600+0+0")
+root.geometry("900x600+20+20")
 root.title("Hello, 10b!")
 
 canvas = Canvas(root, width=896, height=596, bg="white") 
@@ -237,6 +241,9 @@ SenyaHaha(list_circles, 7)
 
 # --- Topchiy Lera ---------------------
 Lera(list_circles, 6)
+
+
+
 canvas.mainloop()
 
 
