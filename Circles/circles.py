@@ -16,12 +16,13 @@
 1, georgyteterin, Тетерин Георгий
 2,nik, Пономарев Никита
 3,eva, Пономарева Ева
+6, Lera, Topchiy Lera
 7, SenyaHaha, Лукин Арсений
-4, dima, Леденцов Дмитрий
+5, dima, DimaLedentsov
+
 ...
 9, polly, Ефимова Полина
 """
-
 from tkinter import *
 
 
@@ -65,6 +66,7 @@ def dima(ls_circle, k):
     pupil_right = canvas.create_oval(x-24, y-18, x-16, y-11, fill="black",outline="black")
     pupil_left = canvas.create_oval(x+16, y-18, x+24, y-11, fill="black",outline="black")
     mouth = canvas.create_line(x-25,y+18, x+25, y+18, fill="black",width=3)
+
 
 # --- Efimova Polina ---------------------
 def polly(ls_circle, k):
@@ -162,6 +164,27 @@ def SenyaHaha(ls_circle, k):
     smile = canvas.create_oval(x-25,y+15, x+25, y+35, fill="indianred2",outline="#f73110")
     lip = canvas.create_oval(x-25,y+5, x+25, y+25, fill="yellow2",outline="#f7dfd6")
 
+
+# --- Valeria Topchiy ---------------------
+def Lera(ls_circle, k):
+    """
+     mll - 
+    """
+    face = ls_circle[k]
+    canvas.itemconfig(face, fill="yellow", outline="black", width=2)
+    n = (k // 5)
+    m = (k % 5)
+    x = r + 40 + m * (2 * r + 80)
+    y = r + 100 + n * (2 * r + 60)
+    eye_right = canvas.create_oval(x-27, y-22, x-13, y-8, fill="pink", outline="white",width=2)
+    eye_left = canvas.create_oval(x+13, y-22, x+27, y-8, fill="pink", outline="white",width=2)
+    eye_right1 = canvas.create_oval(x-24, y-18, x-16, y-11, fill="black",outline="black",width=0.5)
+    eye_left1 = canvas.create_oval(x+16, y-18, x+24, y-11, fill="black",outline="black",width=0.5)
+    mouth = canvas.create_arc(x-20, y-9, x+20, y+25, start=190, extent=160,
+                              fill="red", outline="red", width=4, style=ARC)
+   
+
+
 root = Tk()
 root.geometry("900x600+0+0")
 root.title("Hello, 10b!")
@@ -195,7 +218,7 @@ mll(list_circles, 0)
 
 # --- Dmytry Ledentsov ---------------------
 dima(list_circles, 4)
-
+     
 # --- Efimova Polina ---------------------
 polly(list_circles, 9)
 
@@ -212,6 +235,8 @@ eva(list_circles, 3)
 # --- Lukin Arseny ---------------------
 SenyaHaha(list_circles, 7)
 
+# --- Topchiy Lera ---------------------
+Lera(list_circles, 6)
 canvas.mainloop()
 
 
