@@ -20,9 +20,12 @@
 6, Lera, Topchiy Lera
 7, SenyaHaha, Лукин Арсений
 8, ladvishchenko, Ладвищенко Александр
+9, polly, Ефимова Полина
+
 
 ...
-9, polly, Ефимова Полина
+
+
 """
 from tkinter import *
 
@@ -188,7 +191,26 @@ def Lera(ls_circle, k):
                               fill="red", outline="red", width=4, style=ARC)
    
 
+# --- Ladvishchenko Alexandr  ---------------------
+def ladvishchenko(ls_circle, k):
+    """
+     mll - 
+    """
+    face = ls_circle[k]
+    canvas.itemconfig(face, fill="black", outline="white", width=3)
+    n = (k // 5)
+    m = (k % 5)
+    x = r + 40 + m * (2 * r + 80)
+    y = r + 100 + n * (2 * r + 60)
+    eye_right = canvas.create_oval(x-26, y-23,x-14 , y-8, fill="red",outline="#e7e784")
+    eye_left = canvas.create_oval(x+10, y-18, x+30, y-8, fill="red", outline="#e7e784")
+    
+    pupil_right = canvas.create_oval(x-24, y-18, x-16, y-11, fill="black",outline="black")
+    pupil_left = canvas.create_oval(x+16, y-18, x+24, y-11, fill="black",outline="black")
+    mouth = canvas.create_line(x-10,y+18, x+10, y+18, fill="red",width=3)
 
+
+# ---  ----------------------------
 root = Tk()
 root.geometry("900x600+20+20")
 root.title("Hello, 10b!")
@@ -218,23 +240,7 @@ for k in range(15):
     canvas.create_oval(x-5, y-5, x+5, y+5, fill="blue")
 '''
 
-# --- Ladvishchenko Alexandr  ---------------------
-def ladvishchenko(ls_circle, k):
-    """
-     mll - 
-    """
-    face = ls_circle[k]
-    canvas.itemconfig(face, fill="black", outline="white", width=3)
-    n = (k // 5)
-    m = (k % 5)
-    x = r + 40 + m * (2 * r + 80)
-    y = r + 100 + n * (2 * r + 60)
-    eye_right = canvas.create_oval(x-26, y-23,x-14 , y-8, fill="red",outline="#e7e784")
-    eye_left = canvas.create_oval(x+10, y-18, x+30, y-8, fill="red", outline="#e7e784")
-    
-    pupil_right = canvas.create_oval(x-24, y-18, x-16, y-11, fill="black",outline="black")
-    pupil_left = canvas.create_oval(x+16, y-18, x+24, y-11, fill="black",outline="black")
-    mouth = canvas.create_line(x-10,y+18, x+10, y+18, fill="red",width=3)
+
 # --- Miller Lina Lvovna ---------------------    
 mll(list_circles, 0)
 
