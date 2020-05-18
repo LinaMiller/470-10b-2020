@@ -17,6 +17,7 @@
 2, nik, Пономарев Никита
 3, eva, Пономарева Ева
 4, dima, DimaLedentsov
+5, andrey, Малышев Андрей
 6, Lera, Topchiy Lera
 7, SenyaHaha, Лукин Арсений
 8, ladvishchenko, Ладвищенко Александр
@@ -152,6 +153,24 @@ def eva(ls_circle, k):
     mouth1 = canvas.create_arc(x-22, y-5, x+22, y+35, start=160, extent=220,
                               fill="red", outline="lemon chiffon", width=4, style=ARC)
 
+# --- Andrey Malichev ---------------------
+def andrey(ls_circle, k):
+    """
+     mll - 
+    """
+    face = ls_circle[k]
+    canvas.itemconfig(face, fill="green", outline="green", width=3)
+    n = (k // 5)
+    m = (k % 5)
+    x = r + 40 + m * (2 * r + 80)
+    y = r + 100 + n * (2 * r + 60)
+    
+    pupil_right = canvas.create_oval(x-24, y-18, x-16, y-11, fill="black",outline="black")
+    pupil_left = canvas.create_oval(x+16, y-18, x+24, y-11, fill="black",outline="black")
+    mouth = canvas.create_arc(x-20, y-9, x+20, y+25, start=190, extent=160,
+                              fill="red", outline="red", width=4, style=ARC)
+
+
 # --- Lukin Arseny ---------------------
 
 def SenyaHaha(ls_circle, k):
@@ -263,6 +282,8 @@ eva(list_circles, 3)
 # --- Lukin Arseny ---------------------
 SenyaHaha(list_circles, 7)
 
+# --- Malichev Andrey ---------------------
+andrey(list_circles, 5)
 # --- Topchiy Lera ---------------------
 Lera(list_circles, 6)
 
@@ -271,5 +292,8 @@ ladvishchenko(list_circles, 8)
 
 
 canvas.mainloop()
+
+
+
 
 
