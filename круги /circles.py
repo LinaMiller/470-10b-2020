@@ -228,7 +228,29 @@ def ladvishchenko(ls_circle, k):
     pupil_left = canvas.create_oval(x+16, y-18, x+24, y-11, fill="black",outline="black")
     mouth = canvas.create_line(x-10,y+18, x+10, y+18, fill="red",width=3)
 
+# --- Birukova Ulyana ----------------------------
+def Ulyana(Is_circle, k):
+    """
+     mill -
+    """
+    face = Is_circle[k]
+    canvas.itemconfig(face, fill="pink", outline="pink", width=2)
+    n =(k//5)
+    m  = (k  %  5)
+    x = r + 40 + m * (2 * r + 80)
+    y = r + 100 + n * (2 * r + 60)
+    eye_right = canvas.create_oval(x-27,y-22,x-13,y-8,fill="white",outline="pink",width=2)
+    eye_left = canvas.create_oval(x+13,y-22,x+27,y-8,fill="white",outline="pink",width=2)
+    pupil_right = canvas.create_oval(x-24,y-18,x-16,y-11,fill="black",outline="black",width=0.5)
+    pupil_left = canvas.create_oval(x+16,y-18,x+24,y-11,fill="black",outline="black",width=0.5)
+    mouth=canvas.create_arc(x-15,y-9,x+15,y+25,start=190,extent=160,fill="red",width=4)
+    hat_brim = canvas.create_line(x-70,y-40,x+70,y-40,fill="brown",width=3)
+    hat=canvas.create_rectangle(x+30,y-40,x-30,y-60,outline="brown",fill="brown",width=2)
+    flower = canvas.create_polygon(x-35, y-40, x-50, y-20, x-60, y-25,
+                               x-35, y-40, x-20, y-50, x-40, y-55,
+                               fill="purple")
 
+    
 # ---  ----------------------------
 root = Tk()
 root.geometry("900x600+20+20")
@@ -289,6 +311,9 @@ Lera(list_circles, 6)
 
 # --- Ladvishchenko Alexandr ---------------------
 ladvishchenko(list_circles, 8)
+
+# --- Birukova Ulyana ---------------------
+Ulyana(list_circles, 10)
 
 
 canvas.mainloop()
