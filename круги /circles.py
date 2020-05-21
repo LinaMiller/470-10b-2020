@@ -229,11 +229,11 @@ def ladvishchenko(ls_circle, k):
     mouth = canvas.create_line(x-10,y+18, x+10, y+18, fill="red",width=3)
 
 # --- Birukova Ulyana ----------------------------
-def Ulyana(Is_circle, k):
+def Ulyana(ls_circle, k):
     """
      mill -
     """
-    face = Is_circle[k]
+    face = ls_circle[k]
     canvas.itemconfig(face, fill="pink", outline="pink", width=2)
     n =(k//5)
     m  = (k  %  5)
